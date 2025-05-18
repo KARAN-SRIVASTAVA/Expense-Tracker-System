@@ -30,8 +30,7 @@ const deleteExpense = async (req,res)=>{
 
         const expense = await expenseModel.findById(expenseId)
         const user = await userModel.findById(userId);
-        ///
-        // console.log(typeof userId)
+        
         if(!expense || !user)
         {
             return res.send(error(401,`Invalid ${!expense } + ${!user}`))
